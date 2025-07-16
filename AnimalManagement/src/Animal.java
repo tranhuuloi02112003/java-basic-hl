@@ -4,6 +4,8 @@ public abstract class Animal {
     private String species;
 
     public Animal() {
+
+        
     }
 
     public Animal(String name, int age, String species) {
