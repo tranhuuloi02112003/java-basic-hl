@@ -5,13 +5,14 @@ public abstract class Animal {
 
     public Animal() {
 
-        
+
     }
 
     public Animal(String name, int age, String species) {
         this.name = name;
         this.age = age;
         this.species = species;
+        System.out.println("GIT");
     }
     abstract void makeSound();
 
