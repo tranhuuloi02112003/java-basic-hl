@@ -15,12 +15,14 @@ public class Manager extends Employee{
     double calculateSalary() {
         return this.getBaseSalary()*this.positionCoefficient;
     }
+
     @Override
     public void input(Scanner scanner) {
         super.input(scanner);
         System.out.print("Enter position coefficient:");
         this.positionCoefficient = Double.parseDouble(scanner.nextLine());
     }
+
     public double getPositionCoefficient() {
         return positionCoefficient;
     }
