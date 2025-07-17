@@ -5,7 +5,6 @@ import java.util.Scanner;
 public class OfficeEmployee extends Employee {
     private int workingDays;
 
-
     public OfficeEmployee( ) {
     }
 

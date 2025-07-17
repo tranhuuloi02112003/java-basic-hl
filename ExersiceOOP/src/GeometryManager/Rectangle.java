@@ -23,4 +23,11 @@ public class Rectangle extends Geometry {
     String getShapeName() {
         return "Rectangle";
     }
+
+    @Override
+    public String toString() {
+        return "Area of rectangle:" + calculateArea() + "\n" +
+                "Perimeter of rectangle:" + calculatePerimeter() + "\n" +
+                "Geometry name:" + getShapeName();
+    }
 }

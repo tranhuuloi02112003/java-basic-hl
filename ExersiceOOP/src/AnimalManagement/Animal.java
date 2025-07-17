@@ -6,15 +6,12 @@ public abstract class Animal {
     private String species;
 
     public Animal() {
-
-
     }
 
     public Animal(String name, int age, String species) {
         this.name = name;
         this.age = age;
         this.species = species;
-        System.out.println("GIT");
     }
     abstract void makeSound();
 

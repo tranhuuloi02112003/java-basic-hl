@@ -1,7 +1,8 @@
 package ProductManagement;
 
 public abstract class Product {
-    private String productId, productName;
+    private String productId;
+    private String productName;
     private double basePrice;
 
     public Product() {
@@ -15,9 +16,8 @@ public abstract class Product {
 
     abstract double calculatePrice();
 
-
     void displayInfo() {
-        System.out.print("Product ID:"+this.productId+"\tName: " + productName+ "\tPrice:"+calculatePrice() );
+        System.out.print("Product ID:" + this.productId + "\tName: " + productName + "\tPrice:" + calculatePrice());
     }
 
     public String getProductId() {

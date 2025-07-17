@@ -1,7 +1,6 @@
 package FileProcessing;
 
 public class TextFileProcessor extends FileProcessor{
-
     public TextFileProcessor() {
     }
 

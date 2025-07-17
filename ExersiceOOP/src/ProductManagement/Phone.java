@@ -13,7 +13,6 @@ public class Phone extends Product {
         this.operatingSystem = operatingSystem;
     }
 
-
     @Override
     double calculatePrice() {
         double extraFee = batteryCapacity > 4000 ? 200000 : 10000;

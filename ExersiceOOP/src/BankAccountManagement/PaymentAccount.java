@@ -20,6 +20,7 @@ public class PaymentAccount extends BankAccount {
     String getAccountType() {
         return "Payment account";
     }
+
     public double getAnnualServiceFee() {
         return annualServiceFee;
     }

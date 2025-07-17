@@ -9,8 +9,7 @@ public class Main {
         list.add(new Cat( "Kitty",3,"Cat"));
         list.add(new Lion("Simba", 5,"Lion"));
 
-        for (Animal a:list
-             ) {
+        for (Animal a:list) {
             a.makeSound();
             a.displayInfo();
         }

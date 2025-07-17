@@ -1,7 +1,6 @@
 package FileProcessing;
 
 public class ImageFileProcessor extends  FileProcessor{
-
     public ImageFileProcessor() {
     }
 

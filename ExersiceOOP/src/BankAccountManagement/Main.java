@@ -9,14 +9,11 @@ public class Main {
         System.out.println( p.getAccountType());
         p.deposit(500000);
         p.withdraw(50000);
-//        p.calculateFeeOrInterest();
-//        p.displayInfo();
 
         System.out.println( s.getAccountType());
         s.deposit(500000);
         s.withdraw(50000);
-//        s.calculateFeeOrInterest();
-//        s.displayInfo();
+
         System.out.println("-----ArrayList-----");
         ArrayList<BankAccount> list = new ArrayList<>();
         list.add(p);
@@ -25,6 +22,5 @@ public class Main {
             b.calculateFeeOrInterest();
             b.displayInfo();
         }
-
     }
 }

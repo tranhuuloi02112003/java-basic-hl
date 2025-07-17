@@ -79,8 +79,7 @@ public class Main {
         } else if (option.equals("2")) {
             System.out.print("Enter salary: ");
             double salary = Double.parseDouble(sc.nextLine());
-            for (Employee e : list
-            ) {
+            for (Employee e : list) {
                 if (e.calculateSalary() > salary) {
                     System.out.println(e.toString());
                     flag = true;
@@ -128,7 +127,6 @@ public class Main {
         }
         System.out.println("Highest paid employee");
         System.out.println(max.toString());
-        ;
     }
 
     private static void displayAll() {
@@ -157,6 +155,5 @@ public class Main {
 
     public static void main(String[] args) {
         menu();
-
     }
 }

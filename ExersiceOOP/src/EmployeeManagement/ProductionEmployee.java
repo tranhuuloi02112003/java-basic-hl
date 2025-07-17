@@ -17,6 +17,7 @@ public class ProductionEmployee extends Employee {
     double calculateSalary() {
         return this.getBaseSalary()+10000*this.productCount ;
     }
+
     @Override
     public void input(Scanner scanner){
         super.input(scanner);

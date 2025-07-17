@@ -3,7 +3,8 @@ package EmployeeManagement;
 import java.util.Scanner;
 
 public abstract class Employee {
-    private String employeeId,fullName;
+    private String employeeId;
+    private String fullName;
     private double baseSalary;
 
     public Employee() {
@@ -55,6 +56,4 @@ public abstract class Employee {
     public void setBaseSalary(double baseSalary) {
         this.baseSalary = baseSalary;
     }
-
-
 }
