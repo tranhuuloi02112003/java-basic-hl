@@ -5,8 +5,14 @@ import java.util.ArrayList;
 public class InternationalStudent extends Student {
     private String country;
 
-    public InternationalStudent(String studentID, String studentName, ArrayList<Subject> subjects, String country) {
-        super(studentID, studentName, subjects);
+    public InternationalStudent() {
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
         this.country = country;
     }
 

@@ -1,9 +1,9 @@
 package StudentScoreSystem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class StudentScoreManager {
-    private ArrayList<Student> students = new ArrayList<>();
 
     public double calculateGPA(Student student) {
         double totalScore = 0;
@@ -11,10 +11,10 @@ public class StudentScoreManager {
             totalScore += subject.getScore();
         }
         if (student.getSubjects().size() == 0) return 0;
-        return totalScore / students.size();
+        return totalScore / student.getSubjects().size();
     }
 
-    public Student findTopStudentInSubject(String subjectName) {
+    public Student findTopStudentInSubject(String subjectName,List<Student> students) {
         Student topStudent = null;
         double highestScore = 0;
         for (Student student : students) {
@@ -29,7 +29,7 @@ public class StudentScoreManager {
         return topStudent;
     }
 
-    public ArrayList<Student> sortStudentByGPA() {
+    public ArrayList<Student> sortStudentByGPA(List<Student> students) {
         ArrayList<Student> sortedStudents = new ArrayList<>(students);
         for (int i = 0; i < students.size() - 1; i++) {
             for (int j = i + 1; j < students.size(); j++) {
@@ -46,36 +46,54 @@ public class StudentScoreManager {
     public static void main(String[] args) {
         StudentScoreManager manager = new StudentScoreManager();
 
-        ArrayList<Subject> subjectsAn = new ArrayList<>();
-        subjectsAn.add(new Subject("Math", 9.0));
-        subjectsAn.add(new Subject("Physics", 8.0));
+        List<Student> listStudent = new ArrayList<>();
 
-        ArrayList<Subject> subjectsBob = new ArrayList<>();
-        subjectsBob.add(new Subject("Math", 7.0));
-        subjectsBob.add(new Subject("Physics", 6.5));
-        subjectsBob.add(new Subject("Chemistry", 9.0));
+        Subject mathOfAn= new Subject();
+        Subject physicsOfAn= new Subject();
 
-        Student alice = new DomesticStudent("SV01", "An", subjectsAn, "Hanoi");
-        Student bob = new InternationalStudent("SV02", "Bob", subjectsBob, "USA");
+        mathOfAn.setScore(9);
+        mathOfAn.setNameSubject("Math");
+        physicsOfAn.setScore(8);
+        physicsOfAn.setNameSubject("Physics");
 
-        manager.students.add(alice);
-        manager.students.add(bob);
+        Subject mathOfBob= new Subject();
+        Subject physicsOfBob= new Subject();
+
+        mathOfBob.setScore(7);
+        mathOfBob.setNameSubject("Math");
+        physicsOfBob.setScore(6);
+        physicsOfBob.setNameSubject("Physics");
+
+        DomesticStudent an= new DomesticStudent();
+        an.setStudentID("SV01");
+        an.setStudentName("An");
+        an.setSubjects(List.of(mathOfAn,physicsOfAn));
+        an.setDistrict("Hanoi");
+
+        InternationalStudent bob= new InternationalStudent();
+        bob.setStudentID("SV02");
+        bob.setStudentName("Bob");
+        bob.setSubjects(List.of(mathOfBob,physicsOfBob));
+        bob.setCountry("Canada");
+
+        listStudent.add(an);
+        listStudent.add(bob);
 
         System.out.println("Info student and GPT");
-        for (Student student : manager.students) {
+        for (Student student : listStudent) {
             student.displayInfo();
             System.out.println(", GPA: " + (double) manager.calculateGPA(student));
         }
 
         System.out.println("\nTop student in Math: ");
-        if (manager.findTopStudentInSubject("Math") != null) {
-            manager.findTopStudentInSubject("Math").displayInfo();
+        if (manager.findTopStudentInSubject("Math",listStudent) != null) {
+            manager.findTopStudentInSubject("Math",listStudent).displayInfo();
         } else {
-            System.out.println("No students study math");
+            System.out.println("No students study mathOfAn");
         }
 
         System.out.println("\n\nStudents sorted by GPA:");
-        ArrayList<Student> sorted = manager.sortStudentByGPA();
+        ArrayList<Student> sorted = manager.sortStudentByGPA(listStudent);
         for (Student student : sorted) {
             student.displayInfo();
             System.out.print(", GPA: " + (double) manager.calculateGPA(student) + "\n");

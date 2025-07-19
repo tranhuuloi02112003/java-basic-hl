@@ -5,8 +5,14 @@ import java.util.ArrayList;
 public class DomesticStudent extends Student {
     private String district;
 
-    public DomesticStudent(String studentID, String studentName, ArrayList<Subject> subjects, String district) {
-        super(studentID, studentName, subjects);
+    public DomesticStudent() {
+    }
+
+    public String getDistrict() {
+        return district;
+    }
+
+    public void setDistrict(String district) {
         this.district = district;
     }
 

@@ -1,16 +1,26 @@
 package StudentScoreSystem;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public abstract class Student {
     private String studentID;
     private String studentName;
-    private ArrayList<Subject> subjects;
+    private List<Subject> subjects;
 
-    public Student(String studentID, String studentName, ArrayList<Subject> subjects) {
-        this.studentID = studentID;
-        this.studentName = studentName;
+    public Student() {
+    }
+
+    public void setSubjects(List<Subject> subjects) {
         this.subjects = subjects;
+    }
+
+    public void setStudentName(String studentName) {
+        this.studentName = studentName;
+    }
+
+    public void setStudentID(String studentID) {
+        this.studentID = studentID;
     }
 
     abstract void displayInfo();
@@ -23,7 +33,7 @@ public abstract class Student {
         return studentName;
     }
 
-    public ArrayList<Subject> getSubjects() {
+    public List<Subject> getSubjects() {
         return subjects;
     }
 }
