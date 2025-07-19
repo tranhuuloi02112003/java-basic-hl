@@ -1,16 +1,7 @@
 package StudentScoreSystem;
 
-import java.util.ArrayList;
-
 public class DomesticStudent extends Student {
     private String district;
-
-    public DomesticStudent() {
-    }
-
-    public String getDistrict() {
-        return district;
-    }
 
     public void setDistrict(String district) {
         this.district = district;
