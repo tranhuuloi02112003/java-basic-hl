@@ -52,7 +52,6 @@ public class Management {
         staffList.add(new PartTimeStaff("PT01", "Bob", 3500000, 1.8, 4));
         staffList.add(new PartTimeStaff("PT02", "Alice", 2900000, 1.6, 6));
 
-
         System.out.println("Highest paid employee:");
         Staff highest = findHighestPaidStaff();
         if (highest != null) {
