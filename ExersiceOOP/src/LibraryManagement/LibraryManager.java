@@ -4,7 +4,7 @@ import java.util.List;
 public class LibraryManager {
 
     public static boolean addBook(List<Book> bookList, Book book) {
-        if (isIsbnExists(book.getIsbn())) {
+        if (isIsbnExists(bookList, book.getIsbn())) {
             System.out.println("ISBN already exists!!");
             return false;
         }
@@ -146,7 +146,7 @@ public class LibraryManager {
         displayAllBooks(sortedBooksByAuthor);
 
         System.out.println("\nRemoving book with ISBN02");
-        boolean removed = removeBook(bookList,"ISBN02");
+        boolean removed = removeBook(bookList, "ISBN02");
         if (removed) {
             System.out.println("Removed successfully.");
         } else {
