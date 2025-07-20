@@ -7,18 +7,14 @@ public class WebProject extends Project {
         this.responsiveSupport = responsiveSupport;
     }
 
-    public boolean isResponsiveSupport() {
-        return responsiveSupport;
-    }
-
     @Override
     void displayInfo() {
         System.out.println("Web project: - Project ID: " + getProjectId()
                 + ", Project name: " + getProjectName()
                 + ", Responsive: " + (responsiveSupport ? "Yes" : "No"));
         System.out.println("Member list:");
-        for (Member member : getMemberList()) {
-            System.out.println("Member ID: " + member.getMemberID()
+        for (Member member : getMembers()) {
+            System.out.println("Member ID: " + member.getMemberId()
                     + ", Woking days: " + member.getWorkingDays());
         }
     }

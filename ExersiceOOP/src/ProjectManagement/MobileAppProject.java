@@ -17,8 +17,8 @@ public class MobileAppProject extends Project {
                 + ", Project name: " + getProjectName()
                 + ", Support equipment: " + getSupportEquipment());
         System.out.println("Member list:");
-        for (Member member : getMemberList()) {
-            System.out.println("Member ID: " + member.getMemberID()
+        for (Member member : getMembers()) {
+            System.out.println("Member ID: " + member.getMemberId()
                     + ", Woking days: " + member.getWorkingDays());
         }
     }

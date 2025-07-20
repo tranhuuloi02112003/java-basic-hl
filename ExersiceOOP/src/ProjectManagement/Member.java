@@ -1,19 +1,16 @@
 package ProjectManagement;
 
 public class Member {
-    private String memberID;
+    private String memberId;
     private int workingDays;
 
-    public void setMemberID(String memberID) {
-        this.memberID = memberID;
-    }
-
-    public void setWorkingDays(int workingDays) {
+    public Member(String memberId, int workingDays) {
+        this.memberId = memberId;
         this.workingDays = workingDays;
     }
 
-    public String getMemberID() {
-        return memberID;
+    public String getMemberId() {
+        return memberId;
     }
 
     public int getWorkingDays() {
