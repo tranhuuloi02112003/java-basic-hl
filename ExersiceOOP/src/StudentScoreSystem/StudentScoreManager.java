@@ -83,8 +83,9 @@ public class StudentScoreManager {
         }
 
         System.out.println("\nTop student in Math: ");
-        if (findTopStudentInSubject("Math", listStudent) != null) {
-            findTopStudentInSubject("Math", listStudent).displayInfo();
+        Student topMathStudent = findTopStudentInSubject("Math", listStudent);
+        if (topMathStudent != null) {
+            topMathStudent.displayInfo();
         } else {
             System.out.println("No students study mathOfAn");
         }
