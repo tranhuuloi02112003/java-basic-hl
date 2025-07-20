@@ -15,8 +15,4 @@ public class RegularPlayer extends Player {
     public void setAdsWatchedCount(int adsWatchedCount) {
         this.adsWatchedCount = adsWatchedCount;
     }
-
-    public int getAdsWatchedCount() {
-        return adsWatchedCount;
-    }
 }

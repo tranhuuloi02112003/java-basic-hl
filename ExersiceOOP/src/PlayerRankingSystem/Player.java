@@ -37,5 +37,6 @@ public abstract class Player {
     public int getPlayTime() {
         return playTime;
     }
+
     abstract void displayInfo();
 }

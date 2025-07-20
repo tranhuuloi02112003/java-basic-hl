@@ -15,8 +15,4 @@ public class VipPlayer extends Player {
     public void setMonthlyFee(double monthlyFee) {
         this.monthlyFee = monthlyFee;
     }
-
-    public double getMonthlyFee() {
-        return monthlyFee;
-    }
 }
