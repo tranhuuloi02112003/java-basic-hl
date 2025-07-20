@@ -62,29 +62,29 @@ public class Management {
     public static void main(String[] args) {
         List<Room> rooms = new ArrayList<>();
 
-        StandardRoom room1 = new StandardRoom();
-        room1.setRoomNumber("S101");
-        room1.setPricePerNight(500000);
-        room1.setHasWindow(true);
-        rooms.add(room1);
+        StandardRoom standardRoomS101 = new StandardRoom();
+        standardRoomS101.setRoomNumber("S101");
+        standardRoomS101.setPricePerNight(500000);
+        standardRoomS101.setHasWindow(true);
+        rooms.add(standardRoomS101);
 
-        StandardRoom room2 = new StandardRoom();
-        room2.setRoomNumber("S102");
-        room2.setPricePerNight(400000);
-        room2.setHasWindow(false);
-        rooms.add(room2);
+        StandardRoom standardRoomS102 = new StandardRoom();
+        standardRoomS102.setRoomNumber("S102");
+        standardRoomS102.setPricePerNight(400000);
+        standardRoomS102.setHasWindow(false);
+        rooms.add(standardRoomS102);
 
-        DeluxeRoom room3 = new DeluxeRoom();
-        room3.setRoomNumber("D201");
-        room3.setPricePerNight(1000000);
-        room3.setRoomView("Sea View");
-        rooms.add(room3);
+        DeluxeRoom deluxeRoomD201 = new DeluxeRoom();
+        deluxeRoomD201.setRoomNumber("D201");
+        deluxeRoomD201.setPricePerNight(1000000);
+        deluxeRoomD201.setRoomView("Sea View");
+        rooms.add(deluxeRoomD201);
 
-        DeluxeRoom room4 = new DeluxeRoom();
-        room4.setRoomNumber("D202");
-        room4.setPricePerNight(900000);
-        room4.setRoomView("City View");
-        rooms.add(room4);
+        DeluxeRoom deluxeRoomD202 = new DeluxeRoom();
+        deluxeRoomD202.setRoomNumber("D202");
+        deluxeRoomD202.setPricePerNight(900000);
+        deluxeRoomD202.setRoomView("City View");
+        rooms.add(deluxeRoomD202);
 
         LocalDate date1 = LocalDate.of(2025, 7, 01);
         LocalDate date2 = LocalDate.of(2025, 7, 11);
