@@ -44,20 +44,10 @@ public class Management {
         return result;
     }
 
-    public static List<Order> sortProductsInEachOrderByQuantity(List<Order> orders) {
+    public static void displayOrders(List<Order> orders) {
         for (Order tempOrder : orders) {
-            List<Product> products = tempOrder.getProducts();
-            for (int i = 0; i < products.size() - 1; i++) {
-                for (int j = i + 1; j < products.size(); j++) {
-                    if (products.get(i).getQuantity() < products.get(j).getQuantity()) {
-                        Product tempProduct = products.get(i);
-                        products.set(i, products.get(j));
-                        products.set(j, tempProduct);
-                    }
-                }
-            }
+            tempOrder.displayInfo();
         }
-        return orders;
     }
 
     public static void main(String[] args) {
@@ -96,20 +86,41 @@ public class Management {
         DomesticOrder domesticOrder = new DomesticOrder();
         domesticOrder.setOrderId("D01");
         domesticOrder.setOrderDate(LocalDate.of(2025, 7, 17));
-        domesticOrder.setProducts(new ArrayList<>(List.of(laptopProduct, mouseProduct, monitorProduct)));
         domesticOrder.setDistrict("Hanoi");
+        try {
+            domesticOrder.setProducts(new ArrayList<>(
+                    List.of(laptopProduct, mouseProduct, monitorProduct)
+            ));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         InternationalOrder internationalOrder = new InternationalOrder();
         internationalOrder.setOrderId("I01");
         internationalOrder.setOrderDate(LocalDate.of(2025, 7, 1));
-        internationalOrder.setProducts(new ArrayList<>(List.of(keyboardProduct, webcamProduct)));
         internationalOrder.setCountry("USA");
+        try {
+            internationalOrder.setProducts(new ArrayList<>(
+                    List.of(laptopProduct, mouseProduct, monitorProduct)
+            ));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         addOrder(orderList, domesticOrder);
         addOrder(orderList, internationalOrder);
 
-        System.out.println("Check duplicate order code");
-        addOrder(orderList, internationalOrder);
+        System.out.println("\nTest duplicate product ID:");
+        Product duplicateProduct = new Product();
+        duplicateProduct.setProductId("P01");
+        duplicateProduct.setName("Laptop Pro");
+        duplicateProduct.setPrice(150.0);
+        duplicateProduct.setQuantity(1);
+        try {
+            domesticOrder.setProducts(new ArrayList<>(List.of(duplicateProduct)));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         List<Order> highestValueOrders = findHighestValueOrdersInMonth(orderList, 7);
         System.out.println("\nHighest value order(s) in July:");
@@ -117,10 +128,7 @@ public class Management {
             order.displayInfo();
         }
 
-        System.out.println("\nOrders after sorting products by quantity descending:");
-        sortProductsInEachOrderByQuantity(orderList);
-        for (Order order : orderList) {
-            order.displayInfo();
-        }
+        System.out.println("\nOrders sorted products by quantity descending:");
+        displayOrders(orderList);
     }
 }
