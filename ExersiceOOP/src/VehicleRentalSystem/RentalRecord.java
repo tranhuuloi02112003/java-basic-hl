@@ -5,10 +5,6 @@ public class RentalRecord {
     private Vehicle vehicle;
     private int rentalHours;
 
-    public String getCustomerName() {
-        return customerName;
-    }
-
     public void setCustomerName(String customerName) {
         this.customerName = customerName;
     }

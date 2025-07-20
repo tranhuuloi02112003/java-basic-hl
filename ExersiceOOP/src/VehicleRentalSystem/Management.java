@@ -87,7 +87,6 @@ public class Management {
     public static List<Vehicle> sortAvailableVehiclesByHourlyRateDes(List<Vehicle> vehicleList) {
         List<Vehicle> availableVehicles = findAvailableVehicles(vehicleList);
         sortVehiclesByHourlyRateDes(availableVehicles);
-
         return availableVehicles;
     }
 

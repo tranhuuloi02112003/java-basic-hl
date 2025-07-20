@@ -3,10 +3,6 @@ package VehicleRentalSystem;
 public class Motorbike extends Vehicle {
     private String engineDisplacement;
 
-    public String getEngineDisplacement() {
-        return engineDisplacement;
-    }
-
     public void setEngineDisplacement(String engineDisplacement) {
         this.engineDisplacement = engineDisplacement;
     }
