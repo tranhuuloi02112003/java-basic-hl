@@ -8,7 +8,7 @@ public abstract class Project {
     private String projectName;
     private List<Member> members;
 
-    public void setMembers(List<Member> newMembers) {
+    public void setMembers(List<Member> newMembers) throws Exception {
         if (this.members == null) {
             this.members = new ArrayList<>();
         }
@@ -18,7 +18,7 @@ public abstract class Project {
             System.out.println("Add valid new members.");
             sortMembersByWorkingDaysDec(this.members);
         } else {
-            System.out.println("Additional lists with duplicate member ids!!");
+            throw new Exception("Duplicate member IDs detected in the new list.");
         }
     }
 

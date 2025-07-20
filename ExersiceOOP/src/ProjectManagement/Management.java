@@ -46,24 +46,32 @@ public class Management {
         mobileAppProject.setProjectId("MAP01");
         mobileAppProject.setProjectName("Mobile banking app");
         mobileAppProject.setSupportEquipment("IOS, Android");
-        mobileAppProject.setMembers(new ArrayList<>(
-                List.of(
-                        new Member("M01", 22),
-                        new Member("M02", 11),
-                        new Member("M03", 13)
-                )
-        ));
+        try {
+            mobileAppProject.setMembers(new ArrayList<>(
+                    List.of(
+                            new Member("M01", 22),
+                            new Member("M02", 11),
+                            new Member("M03", 13)
+                    )
+            ));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         WebProject webProject = new WebProject();
         webProject.setProjectId("WP02");
         webProject.setProjectName("Order management website");
         webProject.setResponsiveSupport(true);
-        webProject.setMembers(new ArrayList<>(
-                List.of(
-                        new Member("M04", 30),
-                        new Member("M05", 35)
-                )
-        ));
+        try {
+            webProject.setMembers(new ArrayList<>(
+                    List.of(
+                            new Member("M04", 30),
+                            new Member("M05", 35)
+                    )
+            ));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         addProject(projectList, mobileAppProject);
         addProject(projectList, webProject);
@@ -72,10 +80,18 @@ public class Management {
         Member memberM06 = new Member("M06", 17);
 
         System.out.println("\nTest duplicate member id:");
-        mobileAppProject.setMembers(new ArrayList<>(List.of(memberM01)));
+        try {
+            mobileAppProject.setMembers(new ArrayList<>(List.of(memberM01)));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println("\nAdd valid new members");
-        mobileAppProject.setMembers(new ArrayList<>(List.of(memberM06)));
+        try {
+            mobileAppProject.setMembers(new ArrayList<>(List.of(memberM06)));
+        } catch (Exception e) {
+            System.out.println(e.getMessage());
+        }
 
         System.out.println("\nProject with highest total work days");
         Project project = findProjectWithMostWorkdays(projectList);
