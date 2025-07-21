@@ -45,32 +45,32 @@ public class StudentScoreManager {
     public static void main(String[] args) {
         List<Student> listStudent = new ArrayList<>();
 
-        Subject mathOfAn = new Subject();
-        Subject physicsOfAn = new Subject();
+        Subject mathOfAn= new Subject();
+        Subject physicsOfAn= new Subject();
 
         mathOfAn.setScore(9);
         mathOfAn.setNameSubject("Math");
         physicsOfAn.setScore(8);
         physicsOfAn.setNameSubject("Physics");
 
-        Subject mathOfBob = new Subject();
-        Subject physicsOfBob = new Subject();
+        Subject mathOfBob= new Subject();
+        Subject physicsOfBob= new Subject();
 
         mathOfBob.setScore(7);
         mathOfBob.setNameSubject("Math");
         physicsOfBob.setScore(6);
         physicsOfBob.setNameSubject("Physics");
 
-        DomesticStudent an = new DomesticStudent();
+        DomesticStudent an= new DomesticStudent();
         an.setStudentID("SV01");
         an.setStudentName("An");
-        an.setSubjects(List.of(mathOfAn, physicsOfAn));
+        an.setSubjects(List.of(mathOfAn,physicsOfAn));
         an.setDistrict("Hanoi");
 
-        InternationalStudent bob = new InternationalStudent();
+        InternationalStudent bob= new InternationalStudent();
         bob.setStudentID("SV02");
         bob.setStudentName("Bob");
-        bob.setSubjects(List.of(mathOfBob, physicsOfBob));
+        bob.setSubjects(List.of(mathOfBob,physicsOfBob));
         bob.setCountry("Canada");
 
         listStudent.add(an);
