@@ -1,4 +1,4 @@
-package StreamApiExercises.ProductManagement;
+package ExerciseStreamAPI.src.ProductManagement;
 
 public class Product {
     private String id;

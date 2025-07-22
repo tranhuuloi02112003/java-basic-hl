@@ -1,4 +1,4 @@
-package StreamApiExercises.ProductManagement;
+package ExerciseStreamAPI.src.ProductManagement;
 
 import java.util.ArrayList;
 import java.util.List;
