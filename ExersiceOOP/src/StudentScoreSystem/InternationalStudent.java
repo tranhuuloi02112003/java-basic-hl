@@ -1,16 +1,7 @@
 package StudentScoreSystem;
 
-import java.util.ArrayList;
-
 public class InternationalStudent extends Student {
     private String country;
-
-    public InternationalStudent() {
-    }
-
-    public String getCountry() {
-        return country;
-    }
 
     public void setCountry(String country) {
         this.country = country;
