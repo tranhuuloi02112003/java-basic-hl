@@ -9,20 +9,26 @@ import java.util.stream.Collectors;
 public class Management {
 
     public static double calculateTotalRevenueOfOrders(List<Order> orders) {
-        if (orders == null || orders.isEmpty()) return 0;
+        if (orders == null || orders.isEmpty()) {
+            return 0;
+        }
         return orders.stream().flatMap(order -> order.getOrderItems().stream())
                 .mapToDouble(orderItem -> orderItem.getQuantity() * orderItem.getProduct().getPrice()).sum();
     }
 
     public static double getMaxTotalValueFromOrders(List<Order> orders) {
-        if (orders == null || orders.isEmpty()) return 0;
+        if (orders == null || orders.isEmpty()) {
+            return 0;
+        }
         return orders.stream()
                 .mapToDouble(order -> order.calculateTotalValueOfOrder())
                 .max().getAsDouble();
     }
 
     public static List<Order> findOrdersWithMaxTotalValue(List<Order> orders) {
-        if (orders == null || orders.isEmpty()) return Collections.emptyList();
+        if (orders == null || orders.isEmpty()) {
+            return Collections.emptyList();
+        }
         double maxTotalValue = getMaxTotalValueFromOrders(orders);
 
         return orders.stream().

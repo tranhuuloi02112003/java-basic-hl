@@ -1,6 +1,6 @@
 package OrderManagement;
 
-import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -10,7 +10,7 @@ public class Order {
     private List<OrderItem> orderItems;
 
     public List<OrderItem> getOrderItems() {
-        return new ArrayList<>(this.orderItems);
+        return Collections.unmodifiableList(orderItems);
     }
 
     public void setOrderItems(List<OrderItem> orderItems) {
