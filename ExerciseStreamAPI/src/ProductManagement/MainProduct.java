@@ -14,12 +14,12 @@ public class MainProduct {
         return products.stream().mapToDouble(product -> product.getPrice()).sum();
     }
 
-    public static List<Product> getProductsByCategory(List<Product> products, Class<?> type) {
+    public static List<Product> getProductsByClassType(List<Product> products, Class<?> type) {
         return products.stream()
                 .filter(product -> type.isInstance(product)).toList();
     }
 
-    public static void main(String[] args) {
+    public static List<Product> getProductsData() {
         List<Product> products = new ArrayList<>();
 
         Phone iPhone15 = new Phone();
@@ -51,6 +51,12 @@ public class MainProduct {
         products.add(macbookPro);
         products.add(dellXps);
 
+        return products;
+    }
+
+    public static void main(String[] args) {
+        List<Product> products = getProductsData();
+
         System.out.println("All products:");
         products.forEach(System.out::println);
 
@@ -61,7 +67,7 @@ public class MainProduct {
         System.out.println("\nTotal price of all products:" + calculateTotalPrice(products));
 
         System.out.println("\nFiltered products by Phone");
-        List<Product> phoneList = getProductsByCategory(products, Phone.class);
+        List<Product> phoneList = getProductsByClassType(products, Phone.class);
         phoneList.forEach(System.out::println);
     }
 }
