@@ -6,4 +6,9 @@ public class ElectronicsProduct extends Product{
     public void setWarrantyMonths(int warrantyMonths) {
         this.warrantyMonths = warrantyMonths;
     }
+
+    @Override
+    String getProductCategory() {
+        return "Electronic";
+    }
 }

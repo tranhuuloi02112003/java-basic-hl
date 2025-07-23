@@ -1,6 +1,6 @@
 package OrderManagement;
 
-public class Product {
+public abstract class Product {
     private String productId;
     private String productName;
     private double price;
@@ -24,4 +24,6 @@ public class Product {
     public void setProductName(String productName) {
         this.productName = productName;
     }
+
+    abstract String getProductCategory();
 }

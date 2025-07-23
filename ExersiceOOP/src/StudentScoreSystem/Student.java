@@ -1,15 +1,11 @@
 package StudentScoreSystem;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Student {
     private String studentID;
     private String studentName;
     private List<Subject> subjects;
-
-    public Student() {
-    }
 
     public void setSubjects(List<Subject> subjects) {
         this.subjects = subjects;

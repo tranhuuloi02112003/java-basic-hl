@@ -8,4 +8,9 @@ public class FoodProduct extends Product {
     public void setExpiryDate(LocalDate expiryDate) {
         this.expiryDate = expiryDate;
     }
+
+    @Override
+    String getProductCategory() {
+        return "Food";
+    }
 }

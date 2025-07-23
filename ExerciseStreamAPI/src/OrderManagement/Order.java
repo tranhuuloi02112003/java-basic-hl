@@ -10,8 +10,7 @@ public class Order {
     private List<OrderItem> orderItems;
 
     public List<OrderItem> getOrderItems() {
-        List<OrderItem> orderItems = new ArrayList<>(this.orderItems);
-        return orderItems;
+        return new ArrayList<>(this.orderItems);
     }
 
     public void setOrderItems(List<OrderItem> orderItems) {
@@ -38,4 +37,9 @@ public class Order {
                 ",\n  Order Items:\n  " + orderItemsStr +
                 "\n}";
     }
+     public double calculateTotalValueOfOrder(){
+         if (orderItems.size()==0) return 0;
+         return orderItems.stream()
+                 .mapToDouble(orderItem -> orderItem.getQuantity() * orderItem.getProduct().getPrice()).sum();
+     }
 }

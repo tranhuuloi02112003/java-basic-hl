@@ -14,16 +14,10 @@ public class Management {
                 .mapToDouble(orderItem -> orderItem.getQuantity() * orderItem.getProduct().getPrice()).sum();
     }
 
-    public static double calculateTotalValueOfOder(Order order) {
-        if (order == null || order.getOrderItems() == null) return 0;
-        return order.getOrderItems().stream()
-                .mapToDouble(orderItem -> orderItem.getQuantity() * orderItem.getProduct().getPrice()).sum();
-    }
-
     public static double getMaxTotalValueFromOrders(List<Order> orders) {
         if (orders == null || orders.isEmpty()) return 0;
         return orders.stream()
-                .mapToDouble(order -> calculateTotalValueOfOder(order))
+                .mapToDouble(order -> order.calculateTotalValueOfOrder())
                 .max().getAsDouble();
     }
 
@@ -31,23 +25,15 @@ public class Management {
         if (orders == null || orders.isEmpty()) return Collections.emptyList();
         double maxTotalValue = getMaxTotalValueFromOrders(orders);
 
-        return orders.stream().filter(order -> {
-            double total = calculateTotalValueOfOder(order);
-            return Double.compare(total, maxTotalValue) == 0;
-        }).toList();
-    }
-
-    public static String getProductCategory(Product product) {
-        if (product instanceof ElectronicsProduct) return "Electronic";
-        if (product instanceof FoodProduct) return "Food";
-        return "Other";
+        return orders.stream().
+                filter(order -> Double.compare(order.calculateTotalValueOfOrder(), maxTotalValue) == 0).toList();
     }
 
     public static Map<String, Long> countSoldQuantityByProductType(List<Order> orders) {
         return orders.stream()
                 .flatMap(order -> order.getOrderItems().stream())
                 .collect(Collectors.groupingBy(
-                        OrderItem -> getProductCategory(OrderItem.getProduct()),
+                        orderItem -> orderItem.getProduct().getProductCategory(),
                         Collectors.summingLong(item -> item.getQuantity())
                 ));
     }
@@ -105,5 +91,11 @@ public class Management {
         List<Order> maxOrders = findOrdersWithMaxTotalValue(orders);
         System.out.println("\nOrders with the maximum total value:");
         maxOrders.forEach(System.out::println);
+
+        System.out.println("\nSold quantity of orders by Product category:");
+        Map<String, Long> soldQuantityByProductType = countSoldQuantityByProductType(orders);
+        soldQuantityByProductType.forEach((category, quantity) -> {
+            System.out.println("Category: " + category + "\t Quantity: " + quantity);
+        });
     }
 }
