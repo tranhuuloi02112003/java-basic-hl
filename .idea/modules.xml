@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/AnimalManagement/AnimalManagement.iml" filepath="$PROJECT_DIR$/AnimalManagement/AnimalManagement.iml" />
       <module fileurl="file://$PROJECT_DIR$/BankAccountManagement/BankAccountManagement.iml" filepath="$PROJECT_DIR$/BankAccountManagement/BankAccountManagement.iml" />
       <module fileurl="file://$PROJECT_DIR$/EmployeeManagement/EmployeeManagement.iml" filepath="$PROJECT_DIR$/EmployeeManagement/EmployeeManagement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/ExerciseStreamAPI/ExerciseStreamAPI.iml" filepath="$PROJECT_DIR$/ExerciseStreamAPI/ExerciseStreamAPI.iml" />
       <module fileurl="file://$PROJECT_DIR$/FileProcessing/FileProcessing.iml" filepath="$PROJECT_DIR$/FileProcessing/FileProcessing.iml" />
       <module fileurl="file://$PROJECT_DIR$/GeometryManager/GeometryManager.iml" filepath="$PROJECT_DIR$/GeometryManager/GeometryManager.iml" />
       <module fileurl="file://$PROJECT_DIR$/ProductManagement/ProductManagement.iml" filepath="$PROJECT_DIR$/ProductManagement/ProductManagement.iml" />
