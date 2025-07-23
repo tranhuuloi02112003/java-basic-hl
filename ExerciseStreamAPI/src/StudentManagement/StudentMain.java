@@ -1,14 +1,12 @@
 package StudentManagement;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 public class StudentMain {
 
-    public static List<Student> findTopScoreStudents(List<Student> students) {
-        if (students.isEmpty()) {
-            return new ArrayList<>();
+    public static List<Student> findStudentsScoreEqualsMaxScore(List<Student> students) {
+        if (students == null || students.isEmpty()) {
+            return Collections.EMPTY_LIST;
         }
 
         double maxScore = students.stream()
@@ -19,11 +17,11 @@ public class StudentMain {
                 .filter(student -> student.getScore() == maxScore).toList();
     }
 
-    public static double calculateStudentsAverageScore(List<Student> students) {
+    public static double calculateAverageScoreOfStudents(List<Student> students) {
         return students.stream().mapToDouble(Student::getScore).average().orElse(0);
     }
 
-    public static List<Student> sortStudentsByScoreDes(List<Student> students) {
+    public static List<Student> sortStudentsByScoreOrderByDesc(List<Student> students) {
         return students.stream().sorted(Comparator.comparing(Student::getScore).reversed()).toList();
     }
 
@@ -58,16 +56,14 @@ public class StudentMain {
         List<Student> students = getStudents();
 
         System.out.println("Top score students:");
-        List<Student> topStudents = findTopScoreStudents(students);
+        List<Student> topStudents = findStudentsScoreEqualsMaxScore(students);
         topStudents.forEach(System.out::println);
 
-        double avgScore = calculateStudentsAverageScore(students);
+        double avgScore = calculateAverageScoreOfStudents(students);
         System.out.println("\nAverage score:" + avgScore);
 
         System.out.println("\nStudents sorted by score (desc):");
-        List<Student> sortedList = sortStudentsByScoreDes(students);
+        List<Student> sortedList = sortStudentsByScoreOrderByDesc(students);
         sortedList.forEach(System.out::println);
     }
-
-
 }
