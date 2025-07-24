@@ -5,7 +5,10 @@ import java.util.stream.Collectors;
 
 public class Management {
     public static Map<String, Double> calculateTotalSalaryByDepartment(List<Employee> employees) {
-        if (employees == null || employees.isEmpty()) return Collections.emptyMap();
+        if (employees == null || employees.isEmpty()) {
+            return Collections.emptyMap();
+        }
+
         return employees.stream().collect(Collectors.groupingBy(
                 employee -> employee.getDepartment(),
                 Collectors.summingDouble(employee -> employee.getSalary())
@@ -13,7 +16,9 @@ public class Management {
     }
 
     public static Map<String, Optional<Employee>> findHighestSalaryEmployeeByDepartment(List<Employee> employees) {
-        if (employees == null || employees.isEmpty()) return Collections.emptyMap();
+        if (employees == null || employees.isEmpty()) {
+            return Collections.emptyMap();
+        }
 
         return employees.stream()
                 .collect(Collectors.groupingBy(
@@ -23,7 +28,9 @@ public class Management {
     }
 
     public static List<Employee> findEmployeesWithSalaryGreaterThanAverage(List<Employee> employees) {
-        if (employees == null || employees.isEmpty()) return Collections.emptyList();
+        if (employees == null || employees.isEmpty()) {
+            return Collections.emptyList();
+        }
 
         double averageSalary = employees.stream().mapToDouble(Employee::getSalary).average().getAsDouble();
 
@@ -31,8 +38,6 @@ public class Management {
     }
 
     public static List<Employee> getEmployeesData() {
-        List<Employee> employees = new ArrayList<>();
-
         Employee lily = new Employee();
         lily.setId("E01");
         lily.setName("Lily");
@@ -63,13 +68,7 @@ public class Management {
         ava.setDepartment("Sales");
         ava.setSalary(1100);
 
-        employees.add(lily);
-        employees.add(james);
-        employees.add(charlotte);
-        employees.add(alice);
-        employees.add(ava);
-
-        return employees;
+        return new ArrayList<>(Arrays.asList(lily, james, charlotte, alice, ava));
     }
 
     public static void main(String[] args) {
@@ -91,7 +90,7 @@ public class Management {
         });
 
         System.out.println("Employees with above average salary:");
-        List<Employee> employeesAboveAverageSalary= findEmployeesWithSalaryGreaterThanAverage(employees);
+        List<Employee> employeesAboveAverageSalary = findEmployeesWithSalaryGreaterThanAverage(employees);
         employeesAboveAverageSalary.forEach(System.out::println);
     }
 }
