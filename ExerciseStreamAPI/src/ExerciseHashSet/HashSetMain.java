@@ -7,12 +7,7 @@ import java.util.List;
 
 public class HashSetMain {
     public static boolean hasCommonElement(HashSet<Integer> firstSet, HashSet<Integer> secondSet) {
-        for (Integer number : firstSet) {
-            if (secondSet.contains(number)) {
-                return true;
-            }
-        }
-        return false;
+        return firstSet.stream().anyMatch(secondSet::contains);
     }
 
     public static HashSet<Integer> getIntersection(HashSet<Integer> firstSet, HashSet<Integer> secondSet) {
